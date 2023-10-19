@@ -1,11 +1,15 @@
 import React from 'react';
-// import css from './Filter.module.css'
+import css from './Filter.module.css';
 const Filter = ({ value, onChange }) => (
-  <div>
-    <label>
+  <div className={css.findContacts}>
+    <label className={css.findContactsParagraph}>
       Find contacts by name
-      <br />
-      <input type="text" value={value} onChange={onChange} />
+      <input
+        className={css.findContactsInput}
+        type="text"
+        value={value}
+        onChange={onChange}
+      />
     </label>
   </div>
 );

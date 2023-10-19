@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import css from './ContactForm.module.css';
+// import * as Yup from 'yup';
 class ContactForm extends Component {
   state = {
     name: '',
@@ -13,6 +14,22 @@ class ContactForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    // const contactsData = Yup.object().shape({
+    //   name: Yup.string()
+    //     .matches(
+    //       /^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
+    //       'Invalid name format'
+    //     )
+    //     .min(3, 'Too Short!')
+    //     .max(50, 'Too Long!')
+    //     .required('This field is required!'),
+    //   number: Yup.string()
+    //   .matches(
+    //     /^\+?\d{1,4}?[ .\\-\s]?\(?\d{1,3}?\)?[ .\\-\s]?\d{1,4}[ .\\-\s]?\d{1,4}[ .\\-\s]?\d{1,9}$/,
+    //     'Invalid number format'
+    //   )
+    //   .min(8, 'Too Short!').required('This field is required!'),
+    // });
     this.props.onSubmit(this.state);
     this.setState({ name: '', number: '' });
   };
@@ -23,16 +40,19 @@ class ContactForm extends Component {
         <label className={css.formLabel} htmlFor="">
           <p className={css.labelText}>Name</p>
           <input
+          className={css.formInput}
             type="text"
             name="name"
             onChange={this.handleInputChange}
             value={this.state.name}
+            required
           />
         </label>
 
         <label className={css.formLabel} htmlFor="">
           <p className={css.labelText}>Number</p>
           <input
+          className={css.formInput}
             type="tel"
             name="number"
             value={this.state.number}

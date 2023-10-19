@@ -12,7 +12,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
             <p className={css.contact}>{number}</p>
 
             <button
-              className={css.contactButton}
+              className={css.buttonDelete}
               type="button"
               onClick={() => onDeleteContact(id)}
             >

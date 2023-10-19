@@ -1,0 +1,7 @@
+.phonebook {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    margin: 20px;
+
+}
