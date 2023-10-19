@@ -29,7 +29,7 @@ class ContactForm extends Component {
             value={this.state.name}
           />
         </label>
-        <br />
+
         <label className={css.formLabel} htmlFor="">
           <p className={css.labelText}>Number</p>
           <input
@@ -41,7 +41,6 @@ class ContactForm extends Component {
           />
         </label>
 
-        <br />
         <button className={css.formButton} type="submit">
           Add contact
         </button>
