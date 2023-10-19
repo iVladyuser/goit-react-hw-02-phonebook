@@ -1,8 +1,7 @@
 import { Component } from 'react';
 // import {nanoid } from 'nanoid';
-import ContactForm from './ContactForm/ContactForm';
-import ContactList from './ContactList/ContactList';
-// import css from './ContactList/ContactList.module.css';
+import { ContactForm, ContactList} from 'components'
+
 
 class App extends Component {
   state = {
@@ -25,9 +24,7 @@ class App extends Component {
   };
 
   render() {
-    // const contacts = this.state.contacts.filter(contact =>
-    //   contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
-    // );
+  
     return (
       <div>
         <h1>Phonebook</h1>
