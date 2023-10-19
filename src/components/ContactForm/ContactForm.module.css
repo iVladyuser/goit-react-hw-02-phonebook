@@ -1,0 +1,28 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    width: 300px;
+    padding: 10px;
+    border: solid 1px #808080;
+    border-radius: 4px;
+    margin: 20px;
+
+      
+}
+
+.formLabel {
+    font-size: 500;
+}
+
+.labelText {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+.formButton {
+padding: 1px;
+}
