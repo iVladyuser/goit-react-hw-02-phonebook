@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import css from './App.module.css'
+import css from './App.module.css';
+
+
 import { ContactForm, ContactList, Filter } from 'components';
 
 class App extends Component {
@@ -29,7 +31,9 @@ class App extends Component {
     const readyToAddContact = {
       ...newContact,
       id: nanoid(),
+      
     };
+    console.log(newContact);
 
     this.setState(prevState => ({
       contacts: [...prevState.contacts, readyToAddContact],

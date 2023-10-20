@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import css from './ContactForm.module.css';
 // import * as Yup from 'yup';
+
 class ContactForm extends Component {
   state = {
     name: '',
@@ -14,7 +15,7 @@ class ContactForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // const contactsData = Yup.object().shape({
+    // const contactSchema = Yup.object().shape({
     //   name: Yup.string()
     //     .matches(
     //       /^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
@@ -30,7 +31,12 @@ class ContactForm extends Component {
     //   )
     //   .min(8, 'Too Short!').required('This field is required!'),
     // });
-    this.props.onSubmit(this.state);
+    const contactSchema = {
+      name: this.state.name,
+      number:
+        Number.parseFloat(this.state.number) || alert(`Number is not correct`),
+    };
+    this.props.onSubmit(contactSchema);
     this.setState({ name: '', number: '' });
   };
 
@@ -40,7 +46,7 @@ class ContactForm extends Component {
         <label className={css.formLabel} htmlFor="">
           <p className={css.labelText}>Name</p>
           <input
-          className={css.formInput}
+            className={css.formInput}
             type="text"
             name="name"
             onChange={this.handleInputChange}
@@ -52,7 +58,7 @@ class ContactForm extends Component {
         <label className={css.formLabel} htmlFor="">
           <p className={css.labelText}>Number</p>
           <input
-          className={css.formInput}
+            className={css.formInput}
             type="tel"
             name="number"
             value={this.state.number}
