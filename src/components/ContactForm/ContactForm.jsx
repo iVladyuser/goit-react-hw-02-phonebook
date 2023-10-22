@@ -15,22 +15,6 @@ class ContactForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // const contactSchema = Yup.object().shape({
-    //   name: Yup.string()
-    //     .matches(
-    //       /^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-    //       'Invalid name format'
-    //     )
-    //     .min(3, 'Too Short!')
-    //     .max(50, 'Too Long!')
-    //     .required('This field is required!'),
-    //   number: Yup.string()
-    //   .matches(
-    //     /^\+?\d{1,4}?[ .\\-\s]?\(?\d{1,3}?\)?[ .\\-\s]?\d{1,4}[ .\\-\s]?\d{1,4}[ .\\-\s]?\d{1,9}$/,
-    //     'Invalid number format'
-    //   )
-    //   .min(8, 'Too Short!').required('This field is required!'),
-    // });
     const contactSchema = {
       name: this.state.name,
       number:
@@ -51,6 +35,7 @@ class ContactForm extends Component {
             name="name"
             onChange={this.handleInputChange}
             value={this.state.name}
+            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             required
           />
         </label>
@@ -63,6 +48,7 @@ class ContactForm extends Component {
             name="number"
             value={this.state.number}
             onChange={this.handleInputChange}
+            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
             required
           />
         </label>
