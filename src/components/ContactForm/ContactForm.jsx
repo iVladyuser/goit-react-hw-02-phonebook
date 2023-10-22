@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import css from './ContactForm.module.css';
-// import * as Yup from 'yup';
 
 class ContactForm extends Component {
   state = {
